@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Reminder AI</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    form { margin: 20px auto; width: 300px; }
+    label, select, input { display: block; margin: 10px auto; }
+    button { padding: 10px 20px; }
+    .result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Study Reminder AI</h1>
+  <form method="POST">
+    <label for="day">Select Day:</label>
+    <select name="day" id="day" required>
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
+
+    <label for="hour">Enter Hour (0–23):</label>
+    <input type="number" id="hour" name="hour" min="0" max="23" required>
+
+    <label>
+      <input type="checkbox" name="is_playing"> Are you playing games?
+    </label>
+
+    <button type="submit">Check Reminder</button>
+  </form>
+
+  {% if result %}
+    <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
+</html>
